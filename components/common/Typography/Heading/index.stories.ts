@@ -38,3 +38,11 @@ export const HeadingM: Story = {
     size: "m",
   },
 }
+
+export const HeadingS: Story = {
+  args: {
+    children: "Heading S",
+    level: 3,
+    size: "s",
+  },
+}

@@ -23,10 +23,17 @@ const config = {
         blue: "hsl(223, 100%, 57%)",
         "light-blue": "hsl(223, 100%, 72%)",
         pink: "hsl(300, 99%, 72%)",
+        "light-pink": "hsl(296, 98%, 79%)",
+        "lighter-blue": "hsl(220, 90%, 72%)",
+        "dark-blue": "hsl(231, 72%, 21%)",
       },
       fontFamily: {
         "mouse-memoirs": ["MouseMemoirs", "sans-serif"],
       },
+      // boxShadow: {
+      //   primary:
+      //     "0px 1px 0px 6px #3C74FF inset, 0px -2px 0px 3px #140E66 inset",
+      // },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

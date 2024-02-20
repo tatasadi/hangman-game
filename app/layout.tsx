@@ -22,7 +22,7 @@ export default function RootLayout({
           sizes="32x32"
         />
       </head>
-      <body className="font-mouse-memoirs flex min-h-screen flex-col items-center justify-center text-gunmetal">
+      <body className="font-mouse-memoirs bg-dark-navy flex min-h-screen flex-col items-center justify-center text-gunmetal text-white">
         {children}
         <Reference />
       </body>
