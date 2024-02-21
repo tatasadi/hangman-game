@@ -26,6 +26,7 @@ const config = {
         "light-pink": "hsl(296, 98%, 79%)",
         "lighter-blue": "hsl(220, 90%, 72%)",
         "dark-blue": "hsl(231, 72%, 21%)",
+        "light-purple": "hsl(250, 35%, 62%)",
       },
       fontFamily: {
         "mouse-memoirs": ["MouseMemoirs", "sans-serif"],

@@ -1,4 +1,4 @@
-export default function Reference() {
+export default function Attribution() {
   return (
     <footer className="mb-1 mt-auto flex flex-col text-center text-sm sm:w-full sm:flex-row sm:justify-center sm:gap-1">
       <div>

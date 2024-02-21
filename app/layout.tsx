@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Reference from "@/components/Reference"
+import Attribution from "@/components/attribution"
 
 export const metadata: Metadata = {
-  title: "Body Mass Index Calculator",
+  title: "Hangman Game",
   description: "A Frontend Mentor challenge solution.",
 }
 
@@ -22,9 +22,11 @@ export default function RootLayout({
           sizes="32x32"
         />
       </head>
-      <body className="font-mouse-memoirs bg-dark-navy flex min-h-screen flex-col items-center justify-center text-gunmetal text-white">
-        {children}
-        <Reference />
+      <body className="bg-dark-navy font-mouse-memoirs text-white">
+        <div className="relative mx-auto flex min-h-screen w-full max-w-[90rem] flex-col items-center justify-center bg-[url('../public/background-mobile.svg')] bg-cover bg-no-repeat sm:bg-[url('../public/background-tablet.svg')] lg:bg-[url('../public/background-desktop.svg')]">
+          {children}
+          <Attribution />
+        </div>
       </body>
     </html>
   )

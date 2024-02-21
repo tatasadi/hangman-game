@@ -25,4 +25,13 @@
   .footer-link {
     @apply cursor-pointer underline;
   }
+
+  .heading-stroke {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #243041;
+    background: linear-gradient(180deg, #67b6ff 16.42%, #fff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

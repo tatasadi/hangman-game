@@ -46,3 +46,12 @@ export const HeadingS: Story = {
     size: "s",
   },
 }
+
+export const HeadingXlWithStroke: Story = {
+  args: {
+    children: "Heading XL with stroke",
+    level: 1,
+    size: "xl",
+    hasStroke: true,
+  },
+}
