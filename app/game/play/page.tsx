@@ -19,13 +19,16 @@ export default function Play() {
   const [lives, setLives] = useState(8)
 
   useEffect(() => {
+    if (word === "") {
+      router.push("/game/category")
+    }
     const initialDisplayWord = word
       .toLowerCase()
       .split("")
       .map((char) => (char === " " ? " " : "_"))
       .join("")
     setDisplayWord(initialDisplayWord)
-  }, [word])
+  }, [router, word])
 
   const hanldeMenuCLick = () => {
     setState(GameState.Paused)
@@ -61,12 +64,6 @@ export default function Play() {
       }
     }
     setGuesses([...guesses, letter])
-  }
-
-  if (category === "" || word === "") {
-    // TODO Bonus: add category and word in local storage and load it after refreshing the page
-    router.push("/game/category")
-    return null
   }
 
   return (
