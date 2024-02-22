@@ -5,12 +5,59 @@ import iconMenu from "../../../public/icon-menu.svg"
 import Image from "next/image"
 import { useGame, GameState } from "../../context/game-context"
 import Dialog from "../../../components/common/Dialog"
+import { useEffect, useState } from "react"
+
+const ALPHABET = "abcdefghijklmnopqrstuvwxyz".split("")
 
 export default function Play() {
   const { category, setState, word } = useGame()
+  const [displayWord, setDisplayWord] = useState("")
+  const [guesses, setGuesses] = useState<string[]>([])
+  const [lives, setLives] = useState(8)
+
+  useEffect(() => {
+    const initialDisplayWord = word
+      .toLowerCase()
+      .split("")
+      .map((char) => (char === " " ? " " : "_"))
+      .join("")
+    setDisplayWord(initialDisplayWord)
+  }, [word])
 
   const hanldeMenuCLick = () => {
     setState(GameState.Paused)
+  }
+
+  const handleGuess = (letter: string) => {
+    if (word.toLowerCase().includes(letter)) {
+      // Update the display word with the correctly guessed letter
+      const newDisplayWord = word
+        .toLowerCase()
+        .split("")
+        .map((char, index) => {
+          return guesses.includes(char) || char === letter
+            ? char
+            : char === " "
+              ? " "
+              : "_"
+        })
+        .join("")
+      setDisplayWord(newDisplayWord)
+
+      // Check for win
+      if (!newDisplayWord.includes("_")) {
+        setState(GameState.Won)
+      }
+    } else {
+      // Decrease lives for incorrect guess
+      setLives(lives - 1)
+
+      // Check for loss
+      if (lives <= 1) {
+        setState(GameState.Lost)
+      }
+    }
+    setGuesses([...guesses, letter])
   }
 
   return (
@@ -29,8 +76,34 @@ export default function Play() {
             {category}
           </Heading>
         </div>
-        <div className="mt-[6.25rem] sm:mt-[7.12rem] lg:mt-[9.69rem]">
-          {word}
+        {/* Todo remove this - just for testing*/}
+        {word}
+        <div className="mx-auto mt-[4.88rem] flex w-full flex-wrap justify-center gap-x-2 gap-y-6 sm:mt-[7.12rem] sm:gap-x-4 lg:mt-[5.5rem] lg:gap-x-6 lg:px-[7.88rem]">
+          {displayWord.split("").map((letter, index) =>
+            letter === " " ? (
+              <div key={index} className="h-[4.5rem] w-[3.5rem]"></div>
+            ) : (
+              <Button
+                variant="playable-letter"
+                key={index}
+                disabled={letter === "_"}
+              >
+                {letter === "_" ? "" : letter.toUpperCase()}
+              </Button>
+            ),
+          )}
+        </div>
+        <div className="mt-[7.5rem] grid grid-cols-9 gap-x-2 gap-y-6 sm:gap-x-4 lg:gap-x-6 lg:px-[7.88rem]">
+          {ALPHABET.map((letter) => (
+            <Button
+              variant="keyboard-letter"
+              key={letter}
+              onClick={() => handleGuess(letter)}
+              disabled={guesses.includes(letter)}
+            >
+              {letter.toUpperCase()}
+            </Button>
+          ))}
         </div>
       </div>
       <Dialog />

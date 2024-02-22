@@ -44,7 +44,7 @@ const Dialog = () => {
   }
 
   return (
-    <div className="w-full p-6">
+    <div className="absolute inset-0 flex items-center justify-center">
       <div className="absolute bottom-0 top-0 z-10 w-full bg-[linear-gradient(180deg,#1A043A_0%,#151278_70.31%,#2B1677_100%)] opacity-75"></div>
       <MenuContainer className="relative z-20 mx-auto flex w-full max-w-[37rem] flex-col items-center gap-[2.12rem] p-12 pt-[6.5rem] sm:px-40 sm:pt-[7.5rem]">
         <Heading
