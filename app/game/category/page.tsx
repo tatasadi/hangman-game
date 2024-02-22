@@ -9,10 +9,10 @@ import { useRouter } from "next/navigation"
 
 export default function Category() {
   const router = useRouter()
-  const { setCategory, setState, gameData } = useGame()
+  const { chooseNewWord, setState, gameData } = useGame()
   const categories = Object.keys(gameData.categories)
   const handleCategory = (category: string) => {
-    setCategory(category)
+    chooseNewWord(category)
     setState(GameState.Playing)
     router.push("/game/play")
   }

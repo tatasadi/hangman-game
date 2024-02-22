@@ -7,7 +7,7 @@ import { useGame, GameState } from "../../context/game-context"
 import Dialog from "../../../components/common/Dialog"
 
 export default function Play() {
-  const { category, setState } = useGame()
+  const { category, setState, word } = useGame()
 
   const hanldeMenuCLick = () => {
     setState(GameState.Paused)
@@ -29,7 +29,9 @@ export default function Play() {
             {category}
           </Heading>
         </div>
-        <div className="mt-[6.25rem] sm:mt-[7.12rem] lg:mt-[9.69rem]"></div>
+        <div className="mt-[6.25rem] sm:mt-[7.12rem] lg:mt-[9.69rem]">
+          {word}
+        </div>
       </div>
       <Dialog />
     </main>

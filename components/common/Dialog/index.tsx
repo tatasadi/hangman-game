@@ -8,7 +8,7 @@ import Heading from "../Typography/Heading"
 
 const Dialog = () => {
   const router = useRouter()
-  const { state, setState } = useGame()
+  const { state, setState, resetGame } = useGame()
   const title =
     state === GameState.Paused
       ? "Paused"
@@ -31,7 +31,7 @@ const Dialog = () => {
   }
 
   function handleQuit() {
-    setState(GameState.Idle)
+    resetGame()
     router.push("/")
   }
 
