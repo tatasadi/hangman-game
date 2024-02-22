@@ -11,7 +11,7 @@ export default function Home() {
       <MenuContainer className="relative w-full max-w-[37rem] p-12 sm:px-40">
         <Image src={logo} alt="logo" className="absolute -top-[6.88rem]" />
         <Button className="mt-[8rem]" variant="play" asChild>
-          <Link href="/category">
+          <Link href="/game/category">
             <Image src={iconPlay} alt="Play" />
           </Link>
         </Button>

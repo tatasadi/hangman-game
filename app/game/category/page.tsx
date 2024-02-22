@@ -1,15 +1,22 @@
-import { Button } from "../../components/common/Button"
-import Heading from "../../components/common/Typography/Heading"
-import iconBack from "../../public/icon-back.svg"
+"use client"
+import { Button } from "../../../components/common/Button"
+import Heading from "../../../components/common/Typography/Heading"
+import iconBack from "../../../public/icon-back.svg"
 import Image from "next/image"
 import Link from "next/link"
-import data from "../data.json"
-
-// get keys of data.categories
-// const keys = Object.keys(data.categories)
+import { GameState, useGame } from "../../context/game-context"
+import { useRouter } from "next/navigation"
 
 export default function Category() {
-  const categories = Object.keys(data.categories)
+  const router = useRouter()
+  const { setCategory, setState, gameData } = useGame()
+  const categories = Object.keys(gameData.categories)
+  const handleCategory = (category: string) => {
+    setCategory(category)
+    setState(GameState.Playing)
+    router.push("/game/play")
+  }
+
   return (
     <main className="relative min-h-screen w-full">
       <div className="absolute bottom-0 top-0 z-0 w-full bg-[linear-gradient(180deg,#1A043A_0%,#151278_70.31%,#2B1677_100%)] opacity-75"></div>
@@ -30,7 +37,11 @@ export default function Category() {
         </div>
         <div className="mt-[6.25rem] grid grid-cols-1 gap-4 sm:mt-[7.12rem] sm:grid-cols-2 sm:gap-8 lg:mt-[9.69rem] lg:grid-cols-3 lg:gap-y-[3.12rem]">
           {categories.map((category) => (
-            <Button key={category} variant="category">
+            <Button
+              key={category}
+              variant="category"
+              onClick={() => handleCategory(category)}
+            >
               {category}
             </Button>
           ))}
