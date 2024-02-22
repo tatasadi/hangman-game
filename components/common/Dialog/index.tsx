@@ -1,7 +1,6 @@
 "use client"
 import MenuContainer from "../MenuContainer"
 import { Button } from "../Button"
-import Link from "next/link"
 import { GameState, useGame } from "../../../app/context/game-context"
 import { useRouter } from "next/navigation"
 import Heading from "../Typography/Heading"
@@ -10,6 +9,7 @@ import Paragraph from "../Typography/Paragraph"
 const Dialog = () => {
   const router = useRouter()
   const { state, setState, resetGame, word } = useGame()
+
   const title =
     state === GameState.Paused
       ? "Paused"
@@ -57,13 +57,18 @@ const Dialog = () => {
           {title}
         </Heading>
         {state === GameState.Lost && <Paragraph>Answer: {word}</Paragraph>}
-        <Button variant="primary" onClick={handleContinue}>
+        <Button variant="primary" onClick={handleContinue} tabIndex={1}>
           Continue
         </Button>
-        <Button variant="primary" onClick={handleNewCategory}>
+        <Button variant="primary" onClick={handleNewCategory} tabIndex={1}>
           New Category
         </Button>
-        <Button className="" variant="secondary" onClick={handleQuit}>
+        <Button
+          className=""
+          variant="secondary"
+          onClick={handleQuit}
+          tabIndex={1}
+        >
           Quit Game
         </Button>
       </MenuContainer>

@@ -15,6 +15,8 @@ export default function HowToPlay() {
             variant="secondary"
             className="aspect-square h-14 w-14 rounded-full p-0 sm:h-16 sm:w-16"
             asChild
+            aria-label="back to home"
+            tabIndex={0}
           >
             <Link href="/">
               <Image src={iconBack} alt="Back" className="h-6 w-6" />

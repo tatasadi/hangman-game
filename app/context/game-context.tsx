@@ -48,7 +48,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
 
     if (availableWords.length === 0) {
       console.warn("No more words available in this category")
-      // ToDo (bonus): handle this case
+      // TODO (bonus): handle this case
       return
     }
 
@@ -87,7 +87,6 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
     chooseNewWord: chooseNewWord,
     resetGame,
   }
-  console.log(gameData)
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>
 }

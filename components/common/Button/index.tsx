@@ -10,13 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-blue text-white hover:bg-light-blue py-3 px-12 rounded-full shadow-[0_1px_0_6px_#3c74ff_inset]",
+          "bg-blue text-white hover:bg-light-blue focus:bg-light-blue py-3 px-12 rounded-full shadow-[0_1px_0_6px_#3c74ff_inset]",
         secondary:
-          "bg-gradient-to-b from-pink to-light-blue hover:from-light-pink hover:to-lighter-blue text-white hover:bg-lighter-blue py-3 px-12 rounded-full shadow-[0_1px_0_6px_#C642FB_inset]",
+          "bg-gradient-to-b from-pink to-light-blue hover:from-light-pink hover:to-lighter-blue text-white focus:from-light-pink focus:to-lighter-blue py-3 px-12 rounded-full shadow-[0_1px_0_6px_#C642FB_inset]",
         "playable-letter":
           "bg-blue cursor-default text-white sm:text-[4rem] lg:text-[5.5rem] leading-[6.6rem] py-3 px-4 text-[2.5rem] lg:px-12 sm:px-8 sm:rounded-[2rem] lg:rounded-[2.5rem] rounded-[0.75rem] shadow-[0_1px_0_6px_#3c74ff_inset,0_-2px_0_3px_#140e66_inset] disabled:bg-blue/75 disabled:shadow-[0_1px_0_6px_#221d74_inset]",
         "keyboard-letter":
-          "bg-white text-dark-navy text-[3rem] leading-[3.6rem] hover:bg-blue hover:text-white rounded-[1.5rem]  h-[5.25rem] disabled:bg-white/25",
+          "bg-white text-dark-navy text-[3rem] leading-[3.6rem] hover:bg-blue hover:text-white focus:bg-blue focus:text-white rounded-[1.5rem]  h-[5.25rem] disabled:bg-white/25",
         category:
           "bg-blue text-white hover:bg-light-blue py-3 px-12 rounded-[2.5rem] text-[3rem] tracking-[0.15rem] leading-[3.6rem] h-[11.875rem] shadow-[0_1px_0_6px_#3c74ff_inset]",
         play: "bg-gradient-to-b from-pink to-light-blue hover:from-light-pink hover:to-lighter-blue text-white hover:bg-lighter-blue w-[12.5rem] h-[12.5rem] rounded-full shadow-[0_-7px_0_6px_#243041_inset,_0_-14px_0_11px_#C642FB_inset]",

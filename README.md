@@ -8,7 +8,7 @@ This is a solution to the [Hangman game challenge on Frontend Mentor](https://ww
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
-    - [Screenshots](#screenshots)
+    - [Preview](#preview)
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
@@ -33,23 +33,9 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page.
 - Navigate the entire game only using their keyboard.
 
-### Screenshots
+### Preview
 
-Desktop:
-
-![](./screenshot1.png)
-
-Tablet:
-
-![](./screenshot2.png)
-
-![](./screenshot3.png)
-
-Mobile:
-
-![](./screenshot4.png)
-
-![](./screenshot5.png)
+![](./preview.jpg)
 
 ### Links
 
@@ -78,7 +64,7 @@ Mobile:
 
 ### Implementation time
 
-This challenge was completed over a span of 8 hours.
+This challenge was completed over a span of 12 hours.
 
 ## Author
 

@@ -7,10 +7,12 @@ import { useGame, GameState } from "../../context/game-context"
 import Dialog from "../../../components/common/Dialog"
 import { useEffect, useState } from "react"
 import Lives from "../../../components/common/Lives"
+import { useRouter } from "next/navigation"
 
 const ALPHABET = "abcdefghijklmnopqrstuvwxyz".split("")
 
 export default function Play() {
+  const router = useRouter()
   const { category, setState, word } = useGame()
   const [displayWord, setDisplayWord] = useState("")
   const [guesses, setGuesses] = useState<string[]>([])
@@ -61,6 +63,12 @@ export default function Play() {
     setGuesses([...guesses, letter])
   }
 
+  if (category === "" || word === "") {
+    // TODO Bonus: add category and word in local storage and load it after refreshing the page
+    router.push("/game/category")
+    return null
+  }
+
   return (
     <main className="relative min-h-screen w-full">
       <div className="absolute bottom-0 top-0 z-0 w-full bg-[linear-gradient(180deg,#1A043A_0%,#151278_70.31%,#2B1677_100%)] opacity-75"></div>
@@ -87,6 +95,7 @@ export default function Play() {
                 variant="playable-letter"
                 key={index}
                 disabled={letter === "_"}
+                tabIndex={-1}
               >
                 {letter === "_" ? (
                   <span className="min-h-[3rem] min-w-[1rem] sm:min-h-[7rem] sm:min-w-[1.75rem] lg:min-h-[8rem]">
