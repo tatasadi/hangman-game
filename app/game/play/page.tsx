@@ -6,6 +6,7 @@ import Image from "next/image"
 import { useGame, GameState } from "../../context/game-context"
 import Dialog from "../../../components/common/Dialog"
 import { useEffect, useState } from "react"
+import Lives from "../../../components/common/Lives"
 
 const ALPHABET = "abcdefghijklmnopqrstuvwxyz".split("")
 
@@ -64,7 +65,7 @@ export default function Play() {
     <main className="relative min-h-screen w-full">
       <div className="absolute bottom-0 top-0 z-0 w-full bg-[linear-gradient(180deg,#1A043A_0%,#151278_70.31%,#2B1677_100%)] opacity-75"></div>
       <div className="relative z-10 px-6 py-10 lg:px-10 lg:py-[3.81rem]">
-        <div className="flex w-full items-center gap-4 sm:gap-8 lg:gap-[3.56rem]">
+        <div className="flex w-full items-center gap-4 sm:gap-8 lg:gap-[3.56rem] lg:px-[7rem]">
           <Button
             variant="secondary"
             className="aspect-square h-14 w-14 rounded-full p-0 sm:h-16 sm:w-16"
@@ -75,9 +76,8 @@ export default function Play() {
           <Heading level={1} size="l" className="font-medium">
             {category}
           </Heading>
+          <Lives lives={lives} className="ml-auto" />
         </div>
-        {/* Todo remove this - just for testing*/}
-        {word}
         <div className="mx-auto mt-[4.88rem] flex w-full flex-wrap justify-center gap-x-2 gap-y-6 sm:mt-[7.12rem] sm:gap-x-4 lg:mt-[5.5rem] lg:gap-x-6 lg:px-[7.88rem]">
           {displayWord.split("").map((letter, index) =>
             letter === " " ? (

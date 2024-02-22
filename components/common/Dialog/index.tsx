@@ -5,10 +5,11 @@ import Link from "next/link"
 import { GameState, useGame } from "../../../app/context/game-context"
 import { useRouter } from "next/navigation"
 import Heading from "../Typography/Heading"
+import Paragraph from "../Typography/Paragraph"
 
 const Dialog = () => {
   const router = useRouter()
-  const { state, setState, resetGame } = useGame()
+  const { state, setState, resetGame, word } = useGame()
   const title =
     state === GameState.Paused
       ? "Paused"
@@ -55,6 +56,7 @@ const Dialog = () => {
         >
           {title}
         </Heading>
+        {state === GameState.Lost && <Paragraph>Answer: {word}</Paragraph>}
         <Button variant="primary" onClick={handleContinue}>
           Continue
         </Button>

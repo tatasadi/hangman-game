@@ -6,10 +6,6 @@ export default {
   component: Paragraph,
   parameters: {
     layout: "centered",
-    design: {
-      type: "figspec",
-      url: "https://www.figma.com/file/IlNiJkHwFcQ1Oy6jCmS44H/single-page-developer-portfolio?type=design&node-id=0-910&mode=dev",
-    },
   },
 } as Meta
 

@@ -17,7 +17,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const HomePage: Story = {
+export const Default: Story = {
   args: {
     children: (
       <>
