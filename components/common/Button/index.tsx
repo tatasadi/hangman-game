@@ -14,7 +14,7 @@ const buttonVariants = cva(
         secondary:
           "bg-gradient-to-b from-pink to-light-blue hover:from-light-pink hover:to-lighter-blue text-white hover:bg-lighter-blue py-3 px-12 rounded-full shadow-[0_1px_0_6px_#C642FB_inset]",
         "playable-letter":
-          "bg-blue cursor-default text-white text-[5.5rem] leading-[6.6rem] py-3 px-12 rounded-[2.5rem] w-[7rem] h-[8rem] shadow-[0_1px_0_6px_#3c74ff_inset,0_-2px_0_3px_#140e66_inset] disabled:bg-blue/75 disabled:shadow-[0_1px_0_6px_#221d74_inset]",
+          "bg-blue cursor-default text-white sm:text-[4rem] lg:text-[5.5rem] leading-[6.6rem] py-3 px-4 text-[2.5rem] lg:px-12 sm:px-8 sm:rounded-[2rem] lg:rounded-[2.5rem] rounded-[0.75rem] shadow-[0_1px_0_6px_#3c74ff_inset,0_-2px_0_3px_#140e66_inset] disabled:bg-blue/75 disabled:shadow-[0_1px_0_6px_#221d74_inset]",
         "keyboard-letter":
           "bg-white text-dark-navy text-[3rem] leading-[3.6rem] hover:bg-blue hover:text-white rounded-[1.5rem]  h-[5.25rem] disabled:bg-white/25",
         category:

@@ -81,14 +81,20 @@ export default function Play() {
         <div className="mx-auto mt-[4.88rem] flex w-full flex-wrap justify-center gap-x-2 gap-y-6 sm:mt-[7.12rem] sm:gap-x-4 lg:mt-[5.5rem] lg:gap-x-6 lg:px-[7.88rem]">
           {displayWord.split("").map((letter, index) =>
             letter === " " ? (
-              <div key={index} className="h-[4.5rem] w-[3.5rem]"></div>
+              <div key={index} className="h-[4.5rem] w-[4.125rem]"></div>
             ) : (
               <Button
                 variant="playable-letter"
                 key={index}
                 disabled={letter === "_"}
               >
-                {letter === "_" ? "" : letter.toUpperCase()}
+                {letter === "_" ? (
+                  <span className="min-h-[3rem] min-w-[1rem] sm:min-h-[7rem] sm:min-w-[1.75rem] lg:min-h-[8rem]">
+                    {" "}
+                  </span>
+                ) : (
+                  letter.toUpperCase()
+                )}
               </Button>
             ),
           )}
