@@ -8,6 +8,7 @@ import Link from "next/link"
 export default function HowToPlay() {
   return (
     <main className="relative min-h-screen w-full">
+      <h1 className="sr-only">Hangman Game</h1>
       <div className="absolute bottom-0 top-0 z-0 w-full bg-[linear-gradient(180deg,#1A043A_0%,#151278_70.31%,#2B1677_100%)] opacity-75"></div>
       <div className="relative z-10 px-6 py-10 lg:px-10 lg:py-[3.81rem]">
         <div className="flex w-full items-center justify-between sm:grid sm:grid-cols-[6rem_1fr_6rem] sm:place-items-center">
