@@ -43,6 +43,7 @@ Users should be able to:
   [https://github.com/tatasadi/hangman-game](https://github.com/tatasadi/hangman-game)
 - Live Site URL:
   [https://hangman-game-ta.vercel.app](https://hangman-game-ta.vercel.app)
+- Storybook URL: [https://main--65d78edde67f2ce8276c061e.chromatic.com](https://main--65d78edde67f2ce8276c061e.chromatic.com)
 
 ## My process
 

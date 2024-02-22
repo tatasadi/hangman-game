@@ -32,7 +32,6 @@ const Dialog = () => {
   }
 
   function handleQuit() {
-    resetGame()
     router.push("/")
   }
 

@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation"
 
 export default function Category() {
   const router = useRouter()
-  const { chooseNewWord, setState, gameData } = useGame()
+  const { chooseNewWord, setState, gameData, resetGame } = useGame()
   const categories = Object.keys(gameData.categories)
   const handleCategory = (category: string) => {
     chooseNewWord(category)
