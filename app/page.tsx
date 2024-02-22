@@ -10,8 +10,10 @@ export default function Home() {
     <main className="relative flex w-full max-w-[90rem] flex-col items-center justify-center px-6 pt-[12.5rem] sm:pt-[19.56rem]">
       <MenuContainer className="relative w-full max-w-[37rem] p-12 sm:px-40">
         <Image src={logo} alt="logo" className="absolute -top-[6.88rem]" />
-        <Button className="mt-[8rem]" variant="play">
-          <Image src={iconPlay} alt="Play" />
+        <Button className="mt-[8rem]" variant="play" asChild>
+          <Link href="/category">
+            <Image src={iconPlay} alt="Play" />
+          </Link>
         </Button>
         <Button className="mt-[3.56rem]" variant="primary" asChild>
           <Link href="/how-to-play">How to play</Link>

@@ -1,11 +1,15 @@
 import { Button } from "../../components/common/Button"
-import HowToPlayCard from "../../components/common/HowToPlayCard"
 import Heading from "../../components/common/Typography/Heading"
 import iconBack from "../../public/icon-back.svg"
 import Image from "next/image"
 import Link from "next/link"
+import data from "../data.json"
 
-export default function HowToPlay() {
+// get keys of data.categories
+// const keys = Object.keys(data.categories)
+
+export default function Category() {
+  const categories = Object.keys(data.categories)
   return (
     <main className="relative min-h-screen w-full">
       <div className="absolute bottom-0 top-0 z-0 w-full bg-[linear-gradient(180deg,#1A043A_0%,#151278_70.31%,#2B1677_100%)] opacity-75"></div>
@@ -21,25 +25,15 @@ export default function HowToPlay() {
             </Link>
           </Button>
           <Heading level={1} size="xl" hasStroke={true} className="">
-            How to Play
+            Pick a Category
           </Heading>
         </div>
-        <div className="mt-20 grid grid-cols-1 gap-8 lg:mt-16 lg:grid-cols-3">
-          <HowToPlayCard
-            number="01"
-            title="Choose a category"
-            description="First, choose a word category, like animals or movies. The computer then randomly selects a secret word from that topic and shows you blanks for each letter of the word."
-          />
-          <HowToPlayCard
-            number="02"
-            title="Guess letters"
-            description="Take turns guessing letters. The computer fills in the relevant blank spaces if your guess is correct. If it’s wrong, you lose some health, which empties after eight incorrect guesses."
-          />
-          <HowToPlayCard
-            number="03"
-            title="Win or lose"
-            description="You win by guessing all the letters in the word before your health runs out. If the health bar empties before you guess the word, you lose."
-          />
+        <div className="mt-[6.25rem] grid grid-cols-1 gap-4 sm:mt-[7.12rem] sm:grid-cols-2 sm:gap-8 lg:mt-[9.69rem] lg:grid-cols-3 lg:gap-y-[3.12rem]">
+          {categories.map((category) => (
+            <Button key={category} variant="category">
+              {category}
+            </Button>
+          ))}
         </div>
       </div>
     </main>
